@@ -1,0 +1,13 @@
+[workspace]
+
+members = [
+    "cli",
+    "codegen",
+    "examples",
+    "testing/test-runtime",
+    "testing/integration-tests",
+    "testing/ui-tests",
+    "macro",
+    "metadata",
+    "subxt",
+]
