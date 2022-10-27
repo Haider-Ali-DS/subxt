@@ -268,6 +268,14 @@ impl PalletMetadata {
         self.call_ty_id
     }
 
+    /// Attempt to resolve a call into an call name in this pallet.
+    pub fn call_name(&self, index: u8) -> Option<&str> {
+        self.call_indexes
+            .iter()
+            .find(|(_, i)| **i == index)
+            .map(|(name, _)| name.as_str())
+    }
+
     /// Attempt to resolve a call into an index in this pallet, failing
     /// if the call is not found in this pallet.
     pub fn call_index(&self, function: &str) -> Result<u8, MetadataError> {
